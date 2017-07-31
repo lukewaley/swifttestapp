@@ -12,17 +12,25 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var theLabel: UILabel!
     
+    @IBOutlet weak var text1: UITextField!
+    
+    @IBOutlet weak var text2: UITextField!
+    
     var tapCount = 0
     
     @IBAction func buttonTapped(_ sender: AnyObject) {
         
+        print(text1.text!)
+        print(text2.text!)
         theLabel.text = "success"
-        self.view.backgroundColor = UIColor.blue
+        //self.view.backgroundColor = UIColor.blue
         print("button tapped")
         tapCount = tapCount + 1
         print (tapCount)
-        if tapCount >= 5 { theLabel.text = "chill bro"
-        }
+        if tapCount >= 5 {theLabel.text = "chill bro"
+            }
+          
+        theLabel.text = "product: \(Double (text1.text!)! * Double(text2.text!)!)"
         
     }
    
